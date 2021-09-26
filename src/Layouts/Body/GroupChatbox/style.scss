@@ -1,0 +1,12 @@
+.group-checkox {
+  p {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .group-checkox-container {
+    padding: 10px;
+    display: flex;
+    gap: 30px;
+    flex-flow: wrap;
+  }
+}
