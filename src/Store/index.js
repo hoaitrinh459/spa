@@ -1,10 +1,10 @@
 import { createStore, applyMiddleware } from 'redux';
 import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
-import reducer from './Reducers';
+import reducer from './Reducers/index';
 
 const middleware = [thunk];
-// check nếu không phải production thì push logger vào để log ra những action
+// check if not production then push logger in to log actions
 if (process.env.NODE_ENV !== 'production') {
   middleware.push(createLogger());
 }

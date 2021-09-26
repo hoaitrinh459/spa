@@ -5,11 +5,13 @@ import GroupChatbox from './GroupChatbox';
 /* asset */
 import './style.scss';
 
-function Body() {
+function Body(props) {
+  // eslint-disable-next-line react/prop-types
+  const { listPrefecture } = props;
   return (
     <div className="body">
       <div className="container">
-        <GroupChatbox />
+        <GroupChatbox listPrefecture={listPrefecture} />
       </div>
     </div>
   );
