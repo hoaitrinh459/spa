@@ -1,13 +1,16 @@
 import React, { Fragment } from 'react';
 
+/* Layouts */
 import Header from '../../Layouts/Header';
-/** asset */
+import Body from '../../Layouts/Body';
+/* asset */
 import './style.scss';
 
 function HomePage() {
   return (
     <Fragment>
       <Header title="Title" />
+      <Body />
     </Fragment>
   );
 }
