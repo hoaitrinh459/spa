@@ -9,15 +9,16 @@ import {
 
 import Population from '../../API/Population';
 
-const getPopulation = id => async dispatch => {
+const getPopulation = (id, name) => async dispatch => {
   try {
     dispatch({ type: POPULATION_PREFECTURE_REQUEST });
     const response = await Population.getPopulation(id);
-    const responseBody = response.data.result.line;
+    const responseBody = response.data.result.line.data;
     dispatch({
       type: POPULATION_PREFECTURE_SUCCESS,
       data: responseBody,
       body: id,
+      name,
     });
   } catch (error) {
     dispatch({
@@ -27,12 +28,13 @@ const getPopulation = id => async dispatch => {
   }
 };
 
-const getPopulationNoChecked = id => async dispatch => {
+const getPopulationNoChecked = (id, name) => async dispatch => {
   try {
     dispatch({ type: POPULATION_PREFECTURE_NO_CHECKED_REQUEST });
     dispatch({
       type: POPULATION_PREFECTURE_NO_CHECKED_SUCCESS,
       id,
+      name,
     });
   } catch (error) {
     dispatch({

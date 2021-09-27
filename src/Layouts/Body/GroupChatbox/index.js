@@ -10,11 +10,11 @@ function GroupChatbox(props) {
   // eslint-disable-next-line react/prop-types
   const { listPrefecture } = props;
   const dispatch = useDispatch();
-  const onChange = (e, prefCode) => {
+  const onChange = (e, prefCode, prefName) => {
     if (e.target.checked) {
-      dispatch(Population.getPopulation(prefCode));
+      dispatch(Population.getPopulation(prefCode, prefName));
     } else {
-      dispatch(Population.getPopulationNoChecked(prefCode));
+      dispatch(Population.getPopulationNoChecked(prefCode, prefName));
     }
   };
   return (
@@ -28,7 +28,7 @@ function GroupChatbox(props) {
             prefName={prefecture.prefName}
             key={index}
             onChange={e => {
-              onChange(e, prefecture.prefCode);
+              onChange(e, prefecture.prefCode, prefecture.prefName);
             }}
           />
         ))}
