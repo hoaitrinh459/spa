@@ -7,13 +7,11 @@ import Chart from './Chart';
 /* asset */
 import './style.scss';
 
-function Body(props) {
-  // eslint-disable-next-line react/prop-types
-  const { listPrefecture } = props;
+function Body() {
   return (
     <div className="body">
       <div className="container">
-        <GroupChatbox listPrefecture={listPrefecture} />
+        <GroupChatbox />
         <Chart />
       </div>
     </div>
