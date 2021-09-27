@@ -26,7 +26,7 @@ function population(state = initialState, payload) {
         ...state,
         requesting: false,
         success: true,
-        data: { ...state.data, [payload.body]: payload.data },
+        data: { ...state.data, [payload.body]: [payload.name, payload.data] },
       };
     case POPULATION_PREFECTURE_FAILURE:
       return {
