@@ -36,6 +36,7 @@ function Chart() {
       borderColor: getRandomColor(),
     });
   });
+
   if (!requesting && population)
     dataChart = {
       labels,
