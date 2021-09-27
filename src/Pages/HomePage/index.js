@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import LoadingModal from 'react-loading-bubbles';
 
@@ -17,14 +17,14 @@ function HomePage() {
     dispatch(Prefecture.getListPrefecture());
   }, [dispatch]);
   return (
-    <Fragment>
+    <div className="home-page">
       <Header title="Title" />
       {requesting ? (
         <LoadingModal size={128} color="#23D3D3" backgroundColor="none" />
       ) : (
         <Body listPrefecture={listPrefecture} />
       )}
-    </Fragment>
+    </div>
   );
 }
 export default HomePage;

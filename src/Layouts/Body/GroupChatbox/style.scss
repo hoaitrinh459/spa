@@ -11,3 +11,14 @@
     flex-flow: wrap;
   }
 }
+
+@media screen and (max-width: 720px) {
+  .group-checkox {
+    p {
+      font-size: 20px;
+    }
+    .group-checkox-container {
+      gap: 20px;
+    }
+  }
+}
