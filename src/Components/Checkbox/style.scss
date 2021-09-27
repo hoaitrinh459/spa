@@ -62,3 +62,25 @@
       0 0 0 4px rgba(47, 47, 47, 0.2);
   }
 }
+
+@media screen and (max-width: 720px) {
+  .checkbox {
+    input:not(:checked) + label,
+    input:checked + label {
+      padding-left: 25px;
+      font-size: 16px;
+    }
+
+    input:not(:checked) + label:before,
+    input:checked + label:before {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* checked mark aspect */
+    input:not(:checked) + label:after,
+    input:checked + label:after {
+      font-size: 16px;
+    }
+  }
+}
