@@ -37,15 +37,18 @@ function Chart() {
     });
   });
 
-  if (!requesting && population)
+  if (!requesting && Object.keys(population).length !== 0)
     dataChart = {
       labels,
       datasets,
     };
   return (
     <div className="chart">
+      {/* eslint-disable-next-line no-nested-ternary */}
       {requesting ? (
         <LoadingModal size={128} color="#23D3D3" backgroundColor="none" />
+      ) : Object.keys(population).length === 0 ? (
+        <p>チェックボックスを選択してチャートを表示してください。</p>
       ) : (
         <Line data={dataChart} />
       )}
