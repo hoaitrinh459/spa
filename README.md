@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+### Deploy Heroku:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Link: http://spa-trinhlh.herokuapp.com
 
-## Available Scripts
+### ローカルでコードを実行する
 
-In the project directory, you can run:
+実行するコードのクローンを作成するには、ファイル「.env.example」と同じ値で「.env」という名前の追加ファイルを作成する必要があります。
 
-### `yarn start`
+### 課題の取り組み開始から完了までに要した合計時間: 8 時間
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Build base source: 30 分
+2. UI header: 10 分
+3. UI checkbox: 30 分
+4. Event checkbox: 1 時間
+5. Call API list prefcture: 30 分
+6. Call API population and add event: 1 時間
+7. Redux: 1 時間 30 分 私は Redux を初めて使用するので、処理に時間がかかります。
+8. Responsive: 40 分
+9. Deploy: 1 時間
+10. Fixbug: 1 時間
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### これまでの総合的なプログラミング歴:
 
-### `yarn test`
+Winform、Web アプリケーションを作りました。特に、機械学習とマイクロコントローラーを使って、テニスボールを拾う自動化ロボットも作成しました。
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### これまでの WEB フロントエンドプログラミング歴:
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. BAP Software で、ReactJS でのか２月のインターンシップ
+2. BAP Software で ReactJS Developer として 1 か月: 3 つの実際のプロジェクトに参加しました。
+   a. Blockchain
+   b. Healthy Care
+   c. Sell Services
