@@ -5,6 +5,9 @@ import {
   POPULATION_PREFECTURE_NO_CHECKED_REQUEST,
   POPULATION_PREFECTURE_NO_CHECKED_SUCCESS,
   POPULATION_PREFECTURE_NO_CHECKED_FAILURE,
+  POPULATION_PREFECTURE_CHECKED_REQUEST,
+  POPULATION_PREFECTURE_CHECKED_SUCCESS,
+  POPULATION_PREFECTURE_CHECKED_FAILURE,
 } from '../Constants/Population';
 
 const initialState = {
@@ -12,6 +15,7 @@ const initialState = {
   success: false,
   message: null,
   data: {},
+  dataAll: {},
 };
 
 function population(state = initialState, payload) {
@@ -26,9 +30,32 @@ function population(state = initialState, payload) {
         ...state,
         requesting: false,
         success: true,
-        data: { ...state.data, [payload.body]: [payload.name, payload.data] },
+        dataAll: {
+          ...state.dataAll,
+          [payload.id]: [payload.name, payload.dataAll],
+        },
+        data: { ...state.data, [payload.id]: [payload.name, payload.dataAll] },
       };
     case POPULATION_PREFECTURE_FAILURE:
+      return {
+        ...state,
+        requesting: false,
+        message: payload.message,
+      };
+
+    case POPULATION_PREFECTURE_CHECKED_REQUEST:
+      return {
+        ...state,
+        requesting: true,
+      };
+    case POPULATION_PREFECTURE_CHECKED_SUCCESS:
+      return {
+        ...state,
+        requesting: false,
+        success: true,
+        data: { ...state.data, [payload.id]: state.dataAll[payload.id] },
+      };
+    case POPULATION_PREFECTURE_CHECKED_FAILURE:
       return {
         ...state,
         requesting: false,
