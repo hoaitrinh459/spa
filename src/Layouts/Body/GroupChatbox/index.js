@@ -12,6 +12,7 @@ function GroupChatbox() {
   const dispatch = useDispatch();
   const requesting = useSelector(state => state.listPrefecture.requesting);
   const listPrefecture = useSelector(state => state.listPrefecture.data);
+  const populationDataAll = useSelector(state => state.population.dataAll);
 
   useEffect(() => {
     dispatch(Prefecture.getListPrefecture());
@@ -19,9 +20,11 @@ function GroupChatbox() {
 
   const onChange = (e, prefCode, prefName) => {
     if (e.target.checked) {
-      dispatch(Population.getPopulation(prefCode, prefName));
+      if (!!populationDataAll[prefCode])
+        dispatch(Population.getPopulationChecked(prefCode));
+      else dispatch(Population.getPopulation(prefCode, prefName));
     } else {
-      dispatch(Population.getPopulationNoChecked(prefCode, prefName));
+      dispatch(Population.getPopulationNoChecked(prefCode));
     }
   };
   return (

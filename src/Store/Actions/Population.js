@@ -5,6 +5,9 @@ import {
   POPULATION_PREFECTURE_NO_CHECKED_REQUEST,
   POPULATION_PREFECTURE_NO_CHECKED_SUCCESS,
   POPULATION_PREFECTURE_NO_CHECKED_FAILURE,
+  POPULATION_PREFECTURE_CHECKED_REQUEST,
+  POPULATION_PREFECTURE_CHECKED_SUCCESS,
+  POPULATION_PREFECTURE_CHECKED_FAILURE,
 } from '../Constants/Population';
 
 import Population from '../../API/Population';
@@ -16,8 +19,9 @@ const getPopulation = (id, name) => async dispatch => {
     const responseBody = response.data.result.line.data;
     dispatch({
       type: POPULATION_PREFECTURE_SUCCESS,
+      dataAll: responseBody,
       data: responseBody,
-      body: id,
+      id,
       name,
     });
   } catch (error) {
@@ -28,13 +32,27 @@ const getPopulation = (id, name) => async dispatch => {
   }
 };
 
-const getPopulationNoChecked = (id, name) => async dispatch => {
+const getPopulationChecked = id => async dispatch => {
+  try {
+    dispatch({ type: POPULATION_PREFECTURE_CHECKED_REQUEST });
+    dispatch({
+      type: POPULATION_PREFECTURE_CHECKED_SUCCESS,
+      id,
+    });
+  } catch (error) {
+    dispatch({
+      type: POPULATION_PREFECTURE_CHECKED_FAILURE,
+      message: error,
+    });
+  }
+};
+
+const getPopulationNoChecked = id => async dispatch => {
   try {
     dispatch({ type: POPULATION_PREFECTURE_NO_CHECKED_REQUEST });
     dispatch({
       type: POPULATION_PREFECTURE_NO_CHECKED_SUCCESS,
       id,
-      name,
     });
   } catch (error) {
     dispatch({
@@ -44,6 +62,10 @@ const getPopulationNoChecked = (id, name) => async dispatch => {
   }
 };
 
-const ActionPopulation = { getPopulation, getPopulationNoChecked };
+const ActionPopulation = {
+  getPopulation,
+  getPopulationChecked,
+  getPopulationNoChecked,
+};
 
 export default ActionPopulation;
